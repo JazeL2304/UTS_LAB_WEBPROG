@@ -1,0 +1,7 @@
+.modal-dialog {
+        margin: auto; /* Menyelaraskan modal secara horizontal */
+        top: 50%; /* Mengatur jarak dari atas */
+        transform: translateY(-50%); /* Mengatur agar modal benar-benar berada di tengah vertikal */
+}
+
+ 

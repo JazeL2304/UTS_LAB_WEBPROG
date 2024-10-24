@@ -1,0 +1,309 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #0099CC, #66CCFF);
+    --secondary-color: #ffffff;
+    --text-color: #333333;
+    --card-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+body {
+    background: var(--primary-gradient);
+    font-family: 'Helvetica', sans-serif;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    animation: fadeIn 0.5s ease-out;
+    padding: 0.25rem 1rem; /* Lebih kecil dari sebelumnya */
+}
+
+.navbar-brand img {
+    height: 80px;
+    transition: transform 0.3s ease;
+    animation: float 6s ease-in-out infinite;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.register-container {
+    min-height: calc(100vh - 100px);
+    padding: 4rem 0;
+    position: relative;
+    margin-top: 1rem; /* Tambah margin top */
+}
+
+.register-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    border: none;
+    box-shadow: var(--card-shadow);
+    max-width: 430px;
+    width: 90%;
+    animation: fadeIn 0.8s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.register-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+/* Update padding content dalam card */
+.card-body {
+     padding: 2rem 2.5rem !important; /* Sesuaikan padding dalam card */
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 12px;
+    border: 2px solid #eef2f7;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.9);
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(102,204,255,0.25);
+    border-color: #66CCFF;
+    transform: translateY(-2px);
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group-text {
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    color: #666;
+}
+
+.btn-primary {
+    background: var(--primary-gradient);
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102,204,255,0.4);
+}
+
+.btn-login {
+    background: transparent;
+    border: 2px solid #66CCFF;
+    color: #333;
+    border-radius: 20px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background: var(--primary-gradient);
+    color: white;
+    border-color: transparent;
+}
+
+.error-message {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.decorative-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+}
+
+.circle-1 {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    right: -150px;
+    animation: float 8s infinite;
+}
+
+.circle-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -100px;
+    left: -100px;
+    animation: float 6s infinite reverse;
+}
+
+.password-strength {
+    height: 5px;
+    border-radius: 2.5px;
+    margin-top: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Update style untuk navbar */
+.navbar {
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(10px);
+box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+animation: fadeIn 0.5s ease-out;
+padding: 0.25rem 1rem; /* Sesuaikan padding */
+}
+
+/* Update style untuk logo */
+.taskdo-logo {
+height: 100px; /* Sesuaikan ukuran logo */
+transition: transform 0.3s ease;
+animation: float 6s ease-in-out infinite;
+z-index: 1000;
+}
+
+/* Update style untuk container navbar */
+.container {
+padding: 0.5rem; /* Sesuaikan padding container */
+}
+
+/* Update style untuk tombol login */
+.btn-login {
+background: transparent;
+border: 2px solid #66CCFF;
+color: #333;
+border-radius: 20px;
+padding: 8px 20px;
+transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+background: var(--primary-gradient);
+color: white;
+border-color: transparent;
+}
+
+
+/* Style untuk responsive */
+@media (max-width: 768px) {
+.navbar {
+min-height: 70px; /* Ukuran untuk mobile */
+}
+
+.taskdo-logo {
+max-height: 80px;
+}
+
+.container {
+min-height: 70px;
+}
+}
+
+/* Animasi dan hover effect tetap sama */
+@keyframes float {
+0% {
+transform: translateY(0) rotate(0deg);
+}
+50% {
+transform: translateY(-5px) rotate(2deg);
+}
+100% {
+transform: translateY(0) rotate(0deg);
+}
+}
+
+.taskdo-logo:hover {
+transform: scale(1.1) rotate(5deg);
+filter: drop-shadow(0 0 10px rgba(102,204,255,0.5));
+}
+
+/* Update padding content dalam card */
+.card-body {
+padding: 2rem 2.5rem !important; /* Sesuaikan padding dalam card */
+}
+
+/* Update style form control */
+.form-control {
+border-radius: 8px; /* Kurangi border radius */
+padding: 10px; /* Kurangi padding */
+font-size: 0.95rem; /* Kurangi ukuran font */
+}
+
+/* Update style button */
+.btn-primary {
+padding: 10px; /* Kurangi padding button */
+font-size: 0.95rem; /* Kurangi ukuran font button */
+}
+
+/* Update style heading */
+.card-body h2 {
+font-size: 1.75rem; /* Kurangi ukuran heading */
+margin-bottom: 1.5rem;
+}
+
+/* Update style label */
+.form-label {
+font-size: 0.9rem; /* Kurangi ukuran label */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+.register-container {
+padding: 2rem 0;
+}
+
+.register-card {
+max-width: 90%;
+}
+
+.card-body {
+padding: 1.5rem !important;
+}
+}
